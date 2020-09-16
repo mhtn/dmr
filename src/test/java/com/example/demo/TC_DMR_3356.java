@@ -381,6 +381,7 @@ public class TC_DMR_3356 {
             driver = new ChromeDriver(options);
         }else{
         }
+
         
         driver.get("https://dmrsit1gateway1.skat.dk/dmr-front/dmr.portal");
         driver.manage().window().maximize();
