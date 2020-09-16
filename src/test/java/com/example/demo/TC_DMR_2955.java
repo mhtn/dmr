@@ -204,7 +204,7 @@ public class TC_DMR_2955 {
             System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
             driver = new ChromeDriver();
         }else if(os.indexOf("linux") >= 0){
-            System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
+            System.setProperty("webdriver.chrome.driver", "chromedriver_85");
             System.setProperty("webdriver.chrome.whitelistedIps", "");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
