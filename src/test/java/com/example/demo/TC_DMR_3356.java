@@ -382,7 +382,7 @@ public class TC_DMR_3356 {
         }else{
         }
 
-        
+
         driver.get("https://dmrsit1gateway1.skat.dk/dmr-front/dmr.portal");
         driver.manage().window().maximize();
     }
