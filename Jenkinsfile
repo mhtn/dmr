@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        JAVA_HOME="/opt/java/jdk-12.0.2"
+        JAVA_HOME="//usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
         PATH="${env.JAVA_HOME}/bin:${env.PATH}"
     }
 
