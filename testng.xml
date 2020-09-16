@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parallel tests" >
+    <test name="Test One">
+        <parameter name="test-name" value="Test One"/>
+        <classes>
+            <class name="com.example.demo.TC_DMR_2955" />
+        </classes>
+    </test>
+
+<!--    <test name="Test Two">-->
+<!--        <parameter name="test-name" value="Test Two"/>-->
+<!--        <classes>-->
+<!--            <class name="com.example.demo.TC_DMR_2997" />-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Test Three">-->
+<!--        <parameter name="test-name" value="Test Three"/>-->
+<!--        <classes>-->
+<!--            <class name="com.example.demo.TC_DMR_3356" />-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
