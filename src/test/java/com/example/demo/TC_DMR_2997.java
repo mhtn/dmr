@@ -89,7 +89,6 @@ public class TC_DMR_2997 {
             Thread.sleep(5000);
             feXpathClick(driver, "//*[@id=\"goToLogout\"]", "Log out click");
 
-            System.out.println("lllllllllllllllllllll");
 
         }catch (ArithmeticException e){
             System.out.println(e);
@@ -104,7 +103,7 @@ public class TC_DMR_2997 {
     }
 
     public void feXpathClick(WebDriver driver, String destination, String errorMsg) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
 
         try{
@@ -115,7 +114,7 @@ public class TC_DMR_2997 {
     }
 
     public void feXpathSendkeys(WebDriver driver, String destination, String input, String errorMsg) throws Exception{
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
 
         try{
@@ -127,7 +126,7 @@ public class TC_DMR_2997 {
     }
 
     public String selectFromDropdown(WebDriver driver, String destination, String errorMsg, String type) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         boolean staleElement = true;
         String selectedResult = "";

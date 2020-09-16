@@ -147,7 +147,7 @@ public class TC_DMR_2955 {
     }
 
     public void feXpathClick(WebDriver driver, String destination, String errorMsg) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         try{
             driver.findElement(By.xpath(destination)).click();
@@ -157,7 +157,7 @@ public class TC_DMR_2955 {
     }
 
     public void feXpathSendkeys(WebDriver driver, String destination, String input, String errorMsg) throws Exception{
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         try{
             driver.findElement(By.xpath(destination)).clear();
@@ -168,7 +168,7 @@ public class TC_DMR_2955 {
     }
 
     public String selectFromDropdown(WebDriver driver, String destination, String errorMsg, String type) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         try{
             try{
