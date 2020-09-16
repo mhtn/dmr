@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 6, Time elapsed: 3.218 s <<< FAILURE! - in TestSuite
+setup(com.example.demo.TC_DMR_2955)  Time elapsed: 3.138 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 86
+Current browser version is 79.0.3945.130 with binary path /usr/bin/google-chrome
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'fineract-Latitude-E5570', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-88-generic', java.version: '1.8.0_265'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: #0 0x55595cdabd99 <unknown>
+
+	at com.example.demo.TC_DMR_2955.setup(TC_DMR_2955.java:216)
+
