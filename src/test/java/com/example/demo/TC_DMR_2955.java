@@ -47,7 +47,6 @@ public class TC_DMR_2955 {
             feXpathSendkeys(driver, "//*[@id=\"wnrPass\"]", w_password, "w-password sendkeys");
             feXpathClick(driver, "//*[@id=\"testlogin_loginbtn\"]", "Login click");
 
-
             //Step 2: MR -> Registreringsafgift -> Fastsæt registreringsafgift
             //
             //*Anmelder:* *BID01*
