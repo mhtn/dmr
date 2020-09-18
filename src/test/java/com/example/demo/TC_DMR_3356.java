@@ -375,7 +375,6 @@ public class TC_DMR_3356 {
             options.addArguments("--no-sandbox");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--user-agent=Chrome/85.0.4183.102 (Windows NT 10.0)");
-            options.addArguments("--platform=WINDOWS");
             options.setPageLoadStrategy(PageLoadStrategy.NONE);
             driver = new ChromeDriver(options);
         }else{
