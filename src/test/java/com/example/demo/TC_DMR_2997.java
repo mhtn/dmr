@@ -35,7 +35,7 @@ public class TC_DMR_2997 {
     public void DemoProject(String username, String password, String regnr, String art, String anvendelse) throws Exception {
         long id = Thread.currentThread().getId();
 
-        System.out.println("*******************Begin 2997**********************");
+        System.out.println("*******************Begin 2997*********************");
 
         //ScreenRecorderUtil.startRecord("AutomatiseretDMRTest");
         try {
