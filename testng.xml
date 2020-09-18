@@ -7,17 +7,17 @@
         </classes>
     </test>
 
-<!--    <test name="Test Two">-->
-<!--        <parameter name="test-name" value="Test Two"/>-->
-<!--        <classes>-->
-<!--            <class name="com.example.demo.TC_DMR_2997" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Test Two">
+        <parameter name="test-name" value="Test Two"/>
+        <classes>
+            <class name="com.example.demo.TC_DMR_2997" />
+        </classes>
+    </test>
 
-<!--    <test name="Test Three">-->
-<!--        <parameter name="test-name" value="Test Three"/>-->
-<!--        <classes>-->
-<!--            <class name="com.example.demo.TC_DMR_3356" />-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Test Three">
+        <parameter name="test-name" value="Test Three"/>
+        <classes>
+            <class name="com.example.demo.TC_DMR_3356" />
+        </classes>
+    </test>
 </suite>
