@@ -192,10 +192,6 @@ public class TC_DMR_2997 {
         //driver.manage().window().setSize(new Dimension(640,360));
 
 
-
-
-
-
         
         //driver.manage().deleteAllCookies();
         //driver.get("chrome://settings/clearBrowserData");
