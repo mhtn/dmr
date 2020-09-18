@@ -369,7 +369,7 @@ public class TC_DMR_3356 {
             options.addArguments("--proxy-server='direct://'");
             options.addArguments("--proxy-bypass-list=*");
             options.addArguments("--start-maximized");
-          //  options.addArguments("--headless");
+            options.addArguments("--headless");
             options.addArguments("--disable-gpu");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--no-sandbox");
