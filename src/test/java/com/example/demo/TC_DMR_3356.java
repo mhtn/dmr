@@ -369,12 +369,12 @@ public class TC_DMR_3356 {
             options.addArguments("--proxy-server='direct://'");
             options.addArguments("--proxy-bypass-list=*");
             options.addArguments("--start-maximized");
-            options.addArguments("--headless");
+          //  options.addArguments("--headless");
             options.addArguments("--disable-gpu");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--no-sandbox");
             options.addArguments("--ignore-certificate-errors");
-            options.addArguments("--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36");
+            options.addArguments("--user-agent=Chrome/85.0.4183.102 (Windows NT 10.0)");
             options.setPageLoadStrategy(PageLoadStrategy.NONE);
             driver = new ChromeDriver(options);
         }else{
