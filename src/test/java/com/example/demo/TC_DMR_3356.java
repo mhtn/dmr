@@ -411,6 +411,7 @@ public class TC_DMR_3356 {
         return inputs;
     }
 
+    
     public String numbergenerator(){
         Random rn = new Random();
         int number = rn.nextInt(99999 - 0 + 1) + 0;
