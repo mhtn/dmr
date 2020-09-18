@@ -4,11 +4,12 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import java.time.Duration;
 import java.util.Locale;
 import java.util.Random;
 
@@ -296,14 +297,10 @@ public class TC_DMR_3356 {
     }
 
     public void feXpathClick(WebDriver driver, String destination, String errorMsg) throws Exception {
-        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
-        WebElement my_button = wait.until(driver1 -> driver.findElement(By.xpath(destination)));
-       // WebDriverWait wait = new WebDriverWait(driver, 10);
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         try {
-            my_button.click();
-          //  driver.findElement(By.xpath(destination)).click();
+            driver.findElement(By.xpath(destination)).click();
             Thread.sleep(1000);
         } catch (Exception e) {
             throw new NoSuchElementException("Errror finding element to click: " + errorMsg);
@@ -377,6 +374,7 @@ public class TC_DMR_3356 {
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--no-sandbox");
             options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36");
             options.setPageLoadStrategy(PageLoadStrategy.NONE);
             driver = new ChromeDriver(options);
         }else{
