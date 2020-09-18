@@ -170,7 +170,7 @@ public class TC_DMR_2997 {
             System.setProperty("webdriver.chrome.driver", "chromedriver_85");
             System.setProperty("webdriver.chrome.whitelistedIps", "");
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--window-size=1920,1080");
+            options.addArguments("--window-size=800,600");
             options.addArguments("--disable-extensions");
             options.addArguments("--proxy-server='direct://'");
             options.addArguments("--proxy-bypass-list=*");
@@ -187,8 +187,13 @@ public class TC_DMR_2997 {
         }
 
         driver.get("https://dmrsit1gateway1.skat.dk/dmr-front/dmr.portal");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
        // driver.manage().window().maximize();
-        driver.manage().window().setSize(new Dimension(640,360));
+        //driver.manage().window().setSize(new Dimension(640,360));
 
 
         //driver.manage().deleteAllCookies();
