@@ -215,11 +215,7 @@ public class TC_DMR_2955 {
         }
 
         driver.get("https://dmrsit1gateway1.skat.dk/dmr-front/dmr.portal");
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
       //  driver.manage().window().maximize();
         //driver.manage().window().setSize(new Dimension(640,360));
     }
