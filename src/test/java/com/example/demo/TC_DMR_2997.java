@@ -90,7 +90,6 @@ public class TC_DMR_2997 {
             feXpathClick(driver, "//*[@id=\"goToLogout\"]", "Log out click");
 
 
-
         }catch (ArithmeticException e){
             System.out.println(e);
             System.out.println(e.getCause());
