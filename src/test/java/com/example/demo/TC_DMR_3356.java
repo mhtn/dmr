@@ -1,22 +1,14 @@
 package com.example.demo;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.Locale;
 import java.util.Random;
@@ -305,7 +297,7 @@ public class TC_DMR_3356 {
     }
 
     public void feXpathClick(WebDriver driver, String destination, String errorMsg) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         try {
             driver.findElement(By.xpath(destination)).click();
@@ -316,7 +308,7 @@ public class TC_DMR_3356 {
     }
 
     public void feXpathSendkeys(WebDriver driver, String destination, String input, String errorMsg) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         try {
             driver.findElement(By.xpath(destination)).clear();
@@ -327,7 +319,7 @@ public class TC_DMR_3356 {
     }
 
     public String selectFromDropdown(WebDriver driver, String destination, String errorMsg, String type) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         boolean staleElement = true;
         String selectedResult = "";
@@ -372,18 +364,26 @@ public class TC_DMR_3356 {
             System.setProperty("webdriver.chrome.driver", "chromedriver_85");
             System.setProperty("webdriver.chrome.whitelistedIps", "");
             ChromeOptions options = new ChromeOptions();
+            options.addArguments("--window-size=800,600");
+            options.addArguments("--disable-extensions");
+            options.addArguments("--proxy-server='direct://'");
+            options.addArguments("--proxy-bypass-list=*");
+            options.addArguments("--start-maximized");
             options.addArguments("--headless");
-            options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
-            options.addArguments("--verbose");
-            options.addArguments("–-no-sandbox");
+            options.addArguments("--disable-gpu");
             options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--user-agent=Chrome/85.0.4183.102 (Windows NT 10.0)");
             options.setPageLoadStrategy(PageLoadStrategy.NONE);
             driver = new ChromeDriver(options);
         }else{
         }
 
         driver.get("https://dmrsit1gateway1.skat.dk/dmr-front/dmr.portal");
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
+       // driver.manage().window().setSize(new Dimension(640,360));
+
     }
 
     @AfterMethod

@@ -168,7 +168,7 @@ public class TC_DMR_2946 {
     }
 
     public void feXpathSendkeys(WebDriver driver, String destination, String input, String errorMsg) throws Exception{
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         try{
             driver.findElement(By.xpath(destination)).clear();
@@ -180,7 +180,7 @@ public class TC_DMR_2946 {
 
     public String selectFromDropdown(WebDriver driver, String destination, String errorMsg, String type) throws Exception {
         String selectedResult;
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         try{
             Select result = new Select(driver.findElement(By.xpath(destination)));
@@ -216,7 +216,7 @@ public class TC_DMR_2946 {
         }
 
         driver.get("https://dmrsit1gateway1.skat.dk/dmr-front/dmr.portal");
-        driver.manage().window().maximize();
+       // driver.manage().window().maximize();
         //driver.manage().deleteAllCookies();
         //driver.get("chrome://settings/clearBrowserData");
         //driver.findElement(By.xpath("//*[@id=\"clearBrowsingDataConfirm\"]")).sendKeys(Keys.ENTER);
