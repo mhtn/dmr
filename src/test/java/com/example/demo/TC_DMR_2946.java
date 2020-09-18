@@ -205,7 +205,7 @@ public class TC_DMR_2946 {
             System.setProperty("webdriver.chrome.driver", "chromedriver_85");
             System.setProperty("webdriver.chrome.whitelistedIps", "");
             ChromeOptions options = new ChromeOptions();
-            //options.addArguments("--headless");
+            options.addArguments("--headless");
             options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
             options.addArguments("--verbose");
             options.addArguments("–-no-sandbox");
