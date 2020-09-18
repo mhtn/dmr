@@ -114,9 +114,7 @@ public class TC_DMR_2955 {
 
             //Step 4: MR -> Registrering -> Registrer køretøj
             //Fremsøg *KID01*
-
-            System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-
+            
             feXpathClick(driver, "/html/body/div[2]/div/div[2]/div/div/ul/li[5]/a", "Registrering click");
             feXpathClick(driver, "/html/body/div[2]/div/div[2]/div/div/ul/li[5]/ul/li[1]/a", "Registrer køretøj click");
             feXpathClick(driver, "//*[@id=\"stelnr\"]", "Stelnummer 2 click");
