@@ -1,11 +1,7 @@
 package com.example.demo;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -175,7 +171,7 @@ public class TC_DMR_2997 {
             System.setProperty("webdriver.chrome.whitelistedIps", "");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
-            options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
+           // options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
             options.addArguments("--verbose");
             options.addArguments("–-no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
@@ -186,6 +182,9 @@ public class TC_DMR_2997 {
 
         driver.get("https://dmrsit1gateway1.skat.dk/dmr-front/dmr.portal");
        // driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(640,360));
+
+
         //driver.manage().deleteAllCookies();
         //driver.get("chrome://settings/clearBrowserData");
         //driver.findElement(By.xpath("//*[@id=\"clearBrowsingDataConfirm\"]")).sendKeys(Keys.ENTER);

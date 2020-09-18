@@ -1,22 +1,14 @@
 package com.example.demo;
 
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotSelectableException;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.PageLoadStrategy;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.Locale;
 
@@ -207,7 +199,7 @@ public class TC_DMR_2955 {
             System.setProperty("webdriver.chrome.whitelistedIps", "");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
-            options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
+           // options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
             options.addArguments("--verbose");
             options.addArguments("–-no-sandbox");
             //options.addArguments("--disable-dev-shm-usage");
@@ -218,6 +210,7 @@ public class TC_DMR_2955 {
 
         driver.get("https://dmrsit1gateway1.skat.dk/dmr-front/dmr.portal");
       //  driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(640,360));
     }
 
     @AfterMethod
