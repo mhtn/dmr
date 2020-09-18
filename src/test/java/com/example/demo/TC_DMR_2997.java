@@ -185,7 +185,7 @@ public class TC_DMR_2997 {
         }
 
         driver.get("https://dmrsit1gateway1.skat.dk/dmr-front/dmr.portal");
-        driver.manage().window().maximize();
+       // driver.manage().window().maximize();
         //driver.manage().deleteAllCookies();
         //driver.get("chrome://settings/clearBrowserData");
         //driver.findElement(By.xpath("//*[@id=\"clearBrowsingDataConfirm\"]")).sendKeys(Keys.ENTER);
