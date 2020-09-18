@@ -305,7 +305,7 @@ public class TC_DMR_3356 {
     }
 
     public void feXpathClick(WebDriver driver, String destination, String errorMsg) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         try {
             driver.findElement(By.xpath(destination)).click();
@@ -316,7 +316,7 @@ public class TC_DMR_3356 {
     }
 
     public void feXpathSendkeys(WebDriver driver, String destination, String input, String errorMsg) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         try {
             driver.findElement(By.xpath(destination)).clear();
@@ -327,7 +327,7 @@ public class TC_DMR_3356 {
     }
 
     public String selectFromDropdown(WebDriver driver, String destination, String errorMsg, String type) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 60);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         boolean staleElement = true;
         String selectedResult = "";
@@ -372,7 +372,7 @@ public class TC_DMR_3356 {
             System.setProperty("webdriver.chrome.driver", "chromedriver_85");
             System.setProperty("webdriver.chrome.whitelistedIps", "");
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
+          //options.addArguments("--headless");
             options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
             options.addArguments("--verbose");
             options.addArguments("–-no-sandbox");
