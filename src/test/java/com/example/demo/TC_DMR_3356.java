@@ -4,16 +4,11 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
+import java.time.Duration;
 import java.util.Locale;
 import java.util.Random;
 
@@ -301,10 +296,14 @@ public class TC_DMR_3356 {
     }
 
     public void feXpathClick(WebDriver driver, String destination, String errorMsg) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
+        WebElement my_button = wait.until(driver1 -> driver.findElement(By.xpath(destination)));
+       // WebDriverWait wait = new WebDriverWait(driver, 10);
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(destination)));
         try {
-            driver.findElement(By.xpath(destination)).click();
+            my_button.click();
+          //  driver.findElement(By.xpath(destination)).click();
             Thread.sleep(1000);
         } catch (Exception e) {
             throw new NoSuchElementException("Errror finding element to click: " + errorMsg);
@@ -373,7 +372,7 @@ public class TC_DMR_3356 {
             options.addArguments("--proxy-server='direct://'");
             options.addArguments("--proxy-bypass-list=*");
             options.addArguments("--start-maximized");
-            options.addArguments("--headless");
+           // options.addArguments("--headless");
             options.addArguments("--disable-gpu");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--no-sandbox");
@@ -384,11 +383,7 @@ public class TC_DMR_3356 {
         }
 
         driver.get("https://dmrsit1gateway1.skat.dk/dmr-front/dmr.portal");
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         //driver.manage().window().maximize();
        // driver.manage().window().setSize(new Dimension(640,360));
 
