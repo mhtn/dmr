@@ -208,6 +208,7 @@ public class TC_DMR_2955 {
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--no-sandbox");
             options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--user-agent=Chrome/85.0.4183.102 (Windows NT 10.0)");
             options.setPageLoadStrategy(PageLoadStrategy.NONE);
             driver = new ChromeDriver(options);
         }else{

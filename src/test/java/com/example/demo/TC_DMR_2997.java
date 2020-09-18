@@ -180,6 +180,7 @@ public class TC_DMR_2997 {
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--no-sandbox");
             options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--user-agent=Chrome/85.0.4183.102 (Windows NT 10.0)");
             options.setPageLoadStrategy(PageLoadStrategy.NONE);
             //options.addArguments("--start-maximized");
             driver = new ChromeDriver(options);
@@ -197,6 +198,10 @@ public class TC_DMR_2997 {
 
 
 
+
+
+
+        
         //driver.manage().deleteAllCookies();
         //driver.get("chrome://settings/clearBrowserData");
         //driver.findElement(By.xpath("//*[@id=\"clearBrowsingDataConfirm\"]")).sendKeys(Keys.ENTER);
