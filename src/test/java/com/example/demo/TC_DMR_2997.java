@@ -170,12 +170,18 @@ public class TC_DMR_2997 {
             System.setProperty("webdriver.chrome.driver", "chromedriver_85");
             System.setProperty("webdriver.chrome.whitelistedIps", "");
             ChromeOptions options = new ChromeOptions();
+            options.addArguments("--window-size=1920,1080");
+            options.addArguments("--disable-extensions");
+            options.addArguments("--proxy-server='direct://'");
+            options.addArguments("--proxy-bypass-list=*");
+            options.addArguments("--start-maximized");
             options.addArguments("--headless");
-           // options.addArguments("--window-size=1920x1080"); //should be enabled for Jenkins
-            options.addArguments("--verbose");
-            options.addArguments("–-no-sandbox");
+            options.addArguments("--disable-gpu");
             options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--ignore-certificate-errors");
             options.setPageLoadStrategy(PageLoadStrategy.NONE);
+            //options.addArguments("--start-maximized");
             driver = new ChromeDriver(options);
         }else{
         }
